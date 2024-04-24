@@ -1,2 +1,14 @@
 .DS_Store
 node_modules
+code/03-routing-rendering/01-starting-project/.next/trace
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/client-development/1.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/client-development/2.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/client-development/3.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/client-development/index.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/client-development/index.pack.gz.old
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/server-development/0.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/server-development/1.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/server-development/2.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/server-development/3.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/server-development/index.pack.gz
+code/03-routing-rendering/01-starting-project/.next/cache/webpack/server-development/index.pack.gz.old
