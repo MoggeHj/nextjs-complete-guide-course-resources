@@ -1,4 +1,4 @@
-// File: C:\Repositories\Private\nextjs-react-the-complete-guide\nextjs-complete-guide-course-resources\code\03-routing-rendering\01-starting-project\app\layout.js
+// File: C:\Repositories\Private\nextjs-react-the-complete-guide\nextjs-complete-guide-course-resources\code\03-routing-rendering\01-starting-project\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
