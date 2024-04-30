@@ -29,7 +29,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "middleware.ts"
+    "middleware.ts",
+    "app/archive/@latest/...page.tsx"
   ],
   "exclude": ["node_modules"]
 }
