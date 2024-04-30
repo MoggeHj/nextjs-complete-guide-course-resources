@@ -31,7 +31,7 @@
     ".next/types/**/*.ts",
     "middleware.ts",
     "app/archive/@latest/...page.tsx",
-    "middleware.js"
+    "middleware.ts"
   ],
   "exclude": ["node_modules"]
 }
