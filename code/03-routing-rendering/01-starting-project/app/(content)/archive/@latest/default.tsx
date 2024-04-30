@@ -3,8 +3,8 @@
 import NewsList from "@root/components/news-list";
 import { getLatestNews } from "@root/lib/news";
 
-const DefaultPage = () => {
-  const latestNest = getLatestNews();
+const DefaultPage = async () => {
+  const latestNest = await getLatestNews();
   return (
     <>
       <h2>Latest Archive Page (DefaultView when the path does not exist)</h2>;

@@ -1,3 +1,4 @@
+//This layout component is used to wrap sibling and child pages. The wrapping will stop when a new layout.tsx file is found in a child folder.
 import MainHeader from "@root/components/main-header";
 import "../globals.css";
 
