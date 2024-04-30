@@ -1,5 +1,7 @@
 import NewsList from "@root/components/news-list";
 
+//Server component to fetch data on the server.
+//All data will be fetched on the server when rendering the page.
 const NewsPage = async () => {
   const response = await fetch("http://localhost:8080/news");
 
