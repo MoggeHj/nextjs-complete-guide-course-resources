@@ -1,11 +1,13 @@
-import sql from 'better-sqlite3';
+//This file could contain logic for fetching news from a database using an ORM as Prisma.
 
-import { DUMMY_NEWS } from '@/dummy-news';
+import sql from "better-sqlite3";
 
-const db = sql('data.db');
+import { DUMMY_NEWS } from "@/dummy-news";
+
+const db = sql("data.db");
 
 export function getAllNews() {
-  const news = db.prepare('SELECT * FROM news').all();
+  const news = db.prepare("SELECT * FROM news").all();
   return news;
 }
 
