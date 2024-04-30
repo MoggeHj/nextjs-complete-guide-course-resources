@@ -1,15 +1,15 @@
-import { Suspense } from 'react';
-import Link from 'next/link';
+import { Suspense } from "react";
+import Link from "next/link";
 
-import NewsList from '@/components/news-list';
+import NewsList from "@/components/news-list";
 import {
   getAvailableNewsMonths,
   getAvailableNewsYears,
   getNewsForYear,
   getNewsForYearAndMonth,
-} from '@/lib/news';
+} from "@/lib/news";
 
-async function FilterHeader({ year, month }) {
+const FilterHeader = async ({ year, month }) => {
   const availableYears = await getAvailableNewsYears();
   let links = availableYears;
 
@@ -17,7 +17,7 @@ async function FilterHeader({ year, month }) {
     (year && !availableYears.includes(year)) ||
     (month && !getAvailableNewsMonths(year).includes(month))
   ) {
-    throw new Error('Invalid filter.');
+    throw new Error("Invalid filter.");
   }
 
   if (year && !month) {
@@ -33,9 +33,7 @@ async function FilterHeader({ year, month }) {
       <nav>
         <ul>
           {links.map((link) => {
-            const href = year
-              ? `/archive/${year}/${link}`
-              : `/archive/${link}`;
+            const href = year ? `/archive/${year}/${link}` : `/archive/${link}`;
 
             return (
               <li key={link}>
@@ -47,9 +45,11 @@ async function FilterHeader({ year, month }) {
       </nav>
     </header>
   );
-}
+};
 
-async function FilteredNews({ year, month }) {
+export default FilteredNewsPage;
+
+const FilteredNews = async ({ year, month }) => {
   let news;
 
   if (year && !month) {
@@ -65,9 +65,9 @@ async function FilteredNews({ year, month }) {
   }
 
   return newsContent;
-}
+};
 
-export default async function FilteredNewsPage({ params }) {
+const FilteredNewsPage = async ({ params }) => {
   const filter = params.filter;
 
   const selectedYear = filter?.[0];
@@ -83,4 +83,7 @@ export default async function FilteredNewsPage({ params }) {
       </Suspense>
     </>
   );
-}
+};
+
+// Remove the default export statement
+export { FilteredNewsPage };
