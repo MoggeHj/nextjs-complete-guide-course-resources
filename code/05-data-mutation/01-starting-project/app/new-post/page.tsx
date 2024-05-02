@@ -1,6 +1,6 @@
+import FormSubmit from "@root/components/form-submit";
 import { storePost } from "@root/lib/posts";
-import { userInfo } from "os";
-import { title } from "process";
+import { redirect } from "next/navigation";
 
 const NewPostPage = () => {
   //Server Action. createPostHandler is a function running only on the server
@@ -10,12 +10,14 @@ const NewPostPage = () => {
     const enteredImage = formData.get("image");
     const enteredContent = formData.get("content");
 
-    storePost({
+    await storePost({
       imageUrl: "",
       title: enteredTitle,
       content: enteredContent,
       userId: 1,
     });
+
+    redirect("/feed");
   };
   return (
     <>
@@ -39,8 +41,7 @@ const NewPostPage = () => {
           <textarea id="content" name="content" rows={5} />
         </p>
         <p className="form-actions">
-          <button type="reset">Reset</button>
-          <button>Create Post</button>
+          <FormSubmit />
         </p>
       </form>
     </>
