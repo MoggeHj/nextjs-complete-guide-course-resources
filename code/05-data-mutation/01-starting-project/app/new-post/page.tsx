@@ -1,8 +1,16 @@
-export default function NewPostPage() {
+"use client";
+const NewPostPage = () => {
+  const createPostHandler = (formData) => {
+    debugger;
+    const enteredTitle = formData.get("title"); //name="title" in the form
+    const enteredImage = formData.get("image");
+    const enteredContent = formData.get("content");
+    console.log(enteredTitle, enteredImage, enteredContent);
+  };
   return (
     <>
       <h1>Create a new post</h1>
-      <form>
+      <form action={createPostHandler}>
         <p className="form-control">
           <label htmlFor="title">Title</label>
           <input type="text" id="title" name="title" />
@@ -18,7 +26,7 @@ export default function NewPostPage() {
         </p>
         <p className="form-control">
           <label htmlFor="content">Content</label>
-          <textarea id="content" name="content" rows="5" />
+          <textarea id="content" name="content" rows={5} />
         </p>
         <p className="form-actions">
           <button type="reset">Reset</button>
@@ -27,4 +35,6 @@ export default function NewPostPage() {
       </form>
     </>
   );
-}
+};
+
+export default NewPostPage;

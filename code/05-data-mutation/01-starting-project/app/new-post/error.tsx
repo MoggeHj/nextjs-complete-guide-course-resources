@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-export default function NewPostError({ error }) {
+const NewPostError = ({ error }) => {
   return (
     <>
       <h2>An error occurred!</h2>
@@ -8,4 +8,6 @@ export default function NewPostError({ error }) {
       <p>{error.message}</p>
     </>
   );
-}
+};
+
+export default NewPostError;
