@@ -1,11 +1,21 @@
-"use client";
+import { storePost } from "@root/lib/posts";
+import { userInfo } from "os";
+import { title } from "process";
+
 const NewPostPage = () => {
-  const createPostHandler = (formData) => {
-    debugger;
+  //Server Action. createPostHandler is a function running only on the server
+  const createPostHandler = async (formData) => {
+    "use server";
     const enteredTitle = formData.get("title"); //name="title" in the form
     const enteredImage = formData.get("image");
     const enteredContent = formData.get("content");
-    console.log(enteredTitle, enteredImage, enteredContent);
+
+    storePost({
+      imageUrl: "",
+      title: enteredTitle,
+      content: enteredContent,
+      userId: 1,
+    });
   };
   return (
     <>
