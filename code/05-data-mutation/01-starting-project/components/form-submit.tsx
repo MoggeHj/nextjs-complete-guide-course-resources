@@ -5,7 +5,7 @@ const FormSubmit = () => {
   const status = useFormStatus();
 
   if (status.pending) {
-    return <p>Creating post...</p>;
+    return <>Creating post...</>;
   }
 
   return (
