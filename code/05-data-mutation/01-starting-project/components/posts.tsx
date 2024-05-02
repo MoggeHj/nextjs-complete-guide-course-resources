@@ -1,7 +1,7 @@
-import { formatDate } from '@/lib/format';
-import LikeButton from './like-icon';
+import { formatDate } from "@root/lib/format";
+import LikeButton from "./like-icon";
 
-function Post({ post }) {
+const Post = ({ post }) => {
   return (
     <article className="post">
       <div className="post-image">
@@ -12,7 +12,7 @@ function Post({ post }) {
           <div>
             <h2>{post.title}</h2>
             <p>
-              Shared by {post.userFirstName} on{' '}
+              Shared by {post.userFirstName} on{" "}
               <time dateTime={post.createdAt}>
                 {formatDate(post.createdAt)}
               </time>
@@ -26,9 +26,11 @@ function Post({ post }) {
       </div>
     </article>
   );
-}
+};
 
-export default function Posts({ posts }) {
+export { Post };
+
+const Posts = ({ posts }) => {
   if (!posts || posts.length === 0) {
     return <p>There are no posts yet. Maybe start sharing some?</p>;
   }
@@ -42,4 +44,6 @@ export default function Posts({ posts }) {
       ))}
     </ul>
   );
-}
+};
+
+export default Posts;

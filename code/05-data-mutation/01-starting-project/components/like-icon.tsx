@@ -1,4 +1,4 @@
-export default function LikeButton() {
+const LikeButton = () => {
   return (
     <button className="like-button">
       <svg
@@ -10,4 +10,6 @@ export default function LikeButton() {
       </svg>
     </button>
   );
-}
+};
+
+export default LikeButton;

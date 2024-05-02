@@ -1,7 +1,7 @@
-import logo from '@/assets/logo.png';
-import Link from 'next/link';
+import logo from "@root/assets/logo.png";
+import Link from "next/link";
 
-export default function Header() {
+const Header = () => {
   return (
     <header id="main-header">
       <Link href="/">
@@ -13,10 +13,14 @@ export default function Header() {
             <Link href="/feed">Feed</Link>
           </li>
           <li>
-            <Link className='cta-link' href="/new-post">New Post</Link>
+            <Link className="cta-link" href="/new-post">
+              New Post
+            </Link>
           </li>
         </ul>
       </nav>
     </header>
   );
-}
+};
+
+export default Header;
