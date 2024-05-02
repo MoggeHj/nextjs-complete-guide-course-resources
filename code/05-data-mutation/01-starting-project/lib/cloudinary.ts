@@ -18,7 +18,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-export async function uploadImage(image) {
+const uploadImage = async (image) => {
   const imageData = await image.arrayBuffer();
   const mime = image.type;
   const encoding = "base64";
@@ -28,4 +28,6 @@ export async function uploadImage(image) {
     folder: "nextjs-course-mutations",
   });
   return result.secure_url;
-}
+};
+
+export default uploadImage;

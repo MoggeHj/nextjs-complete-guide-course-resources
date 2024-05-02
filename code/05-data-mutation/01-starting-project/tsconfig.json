@@ -31,7 +31,8 @@
     ".next/types/**/*.ts",
     "middleware.ts",
     "app/archive/@latest/...page.tsx",
-    "middleware.ts"
+    "middleware.ts",
+    "lib/cloudinary.js"
   ],
   "exclude": ["node_modules"]
 }

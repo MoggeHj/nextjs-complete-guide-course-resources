@@ -1,7 +1,8 @@
 "use server"; //this directive is not a 100% guarantee that the code will run only on the server. Use "server-only" package for that.
 import { redirect } from "next/navigation";
 
-import { storePost } from "@root/lib/posts";
+import { storePost, updatePostLikeStatus } from "@root/lib/posts";
+import uploadImage from "@root/lib/cloudinary";
 
 //Server Action. createPostHandler is a function running only on the server
 const createPostHandler = async (prevState, formData) => {
@@ -27,8 +28,16 @@ const createPostHandler = async (prevState, formData) => {
     return { errors };
   }
 
+  //Can not get Cloudinary to work. Get a 401 Invalid key for some reason
+  let imageUrl;
+  try {
+    // imageUrl = await uploadImage(image);
+  } catch (error) {
+    throw new Error("Image upload failed. Post not created please try later.");
+  }
+
   await storePost({
-    imageUrl: "",
+    imageUrl: "", //imageUrl,
     title: title.trim(),
     content: content.trim(),
     userId: 1,
@@ -38,3 +47,7 @@ const createPostHandler = async (prevState, formData) => {
 };
 
 export default createPostHandler;
+
+const togglePostLikeStatus = (post) => {
+  updatePostLikeStatus(post, 2);
+};
