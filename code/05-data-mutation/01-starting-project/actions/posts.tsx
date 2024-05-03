@@ -52,6 +52,6 @@ export default createPostHandler;
 
 const togglePostLikeStatus = (postId) => {
   updatePostLikeStatus(postId, 2);
-  revalidatePath("/feed"); //revalidate the feed page (the path where the post is displayed
+  revalidatePath("/feed"); //revalidate the feed page (the path where the post is displayed)
 };
 export { togglePostLikeStatus };

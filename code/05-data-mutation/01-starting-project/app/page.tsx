@@ -8,8 +8,6 @@ const LatestPosts = async () => {
   return <Posts posts={latestPosts} />;
 };
 
-export { LatestPosts };
-
 const Home = () => {
   return (
     <>
