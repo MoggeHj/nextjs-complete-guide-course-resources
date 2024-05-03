@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 
 import { storePost, updatePostLikeStatus } from "@root/lib/posts";
 import uploadImage from "@root/lib/cloudinary";
+import exp from "constants";
+import { revalidatePath } from "next/cache";
 
 //Server Action. createPostHandler is a function running only on the server
 const createPostHandler = async (prevState, formData) => {
@@ -48,6 +50,8 @@ const createPostHandler = async (prevState, formData) => {
 
 export default createPostHandler;
 
-const togglePostLikeStatus = (post) => {
-  updatePostLikeStatus(post, 2);
+const togglePostLikeStatus = (postId) => {
+  updatePostLikeStatus(postId, 2);
+  revalidatePath("/feed"); //revalidate the feed page (the path where the post is displayed
 };
+export { togglePostLikeStatus };
