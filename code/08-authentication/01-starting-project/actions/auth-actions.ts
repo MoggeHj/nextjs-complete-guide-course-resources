@@ -3,8 +3,8 @@ import { redirect } from "next/navigation";
 
 import { hashUserPassword, verifyPassword } from "@/lib/hash";
 import { createUser, getUserByEmail } from "@/lib/user";
-import { create } from "domain";
-import { createAuthSession } from "@/lib/auth";
+
+import { createAuthSession, destroySession } from "@/lib/auth";
 
 const signup = async (prevState, formData) => {
   const email = formData.get("email");
@@ -45,6 +45,7 @@ const signup = async (prevState, formData) => {
 };
 
 const login = async (prevState, formData) => {
+  debugger;
   const email = formData.get("email");
   const password = formData.get("password");
 
@@ -79,4 +80,9 @@ const auth = async (mode, prevState, formData) => {
   return signup(prevState, formData);
 };
 
-export { signup, login, auth };
+const logout = async () => {
+  await destroySession();
+  redirect("/");
+};
+
+export { signup, login, auth, logout };
